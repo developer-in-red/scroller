@@ -1,0 +1,73 @@
+.grid {
+  display: grid;
+  margin: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: masonry;
+  grid-gap: 4px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: var(--color-1);
+  animation: 2s infinite alternate pink;
+  pointer-events: none;
+}
+
+@keyframes pink {
+  from {
+    opacity: 0.15;
+  }
+
+  to {
+    opacity: var(--pinkness-intensity);
+  }
+}
+
+img,
+.link {
+  display: inline-block;
+  width: 100%;
+  min-height: 100px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.toolbar {
+  background: var(--color-3);
+  width: 100vw;
+  position: sticky;
+  top: -110px;
+  transition: top 0.25s;
+}
+
+.toolbar:hover,
+.toolbar:focus-within {
+  top: 0px;
+}
+
+.settings {
+  display: flex;
+  flex-grow: 1;
+}
+
+.setting input {
+  display: block;
+}
+
+.credit {
+  text-align: center;
+  width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    background-color: var(--color-3);
+    text-align: center;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<html lang="en">
+  <head>
+    <title>Sissy Scroller</title>
+    <meta
+      name="description"
+      content="Never ending sissy gifs for you, sweetie"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/img/site.webmanifest" />
+    <link rel="modulepreload" href="script/main.js" as="script" />
+    <link rel="modulepreload" href="script/grid.js" as="script" />
+    <link rel="modulepreload" href="script/scroll.js" as="script" />
+    <link rel="modulepreload" href="script/pinkness.js" as="script" />
+    <style>
+      /* Critical CSS inlined to prevent FOUC */
+      html {
+        --color-1: #ff6ec7;
+        --color-2: #fd009b;
+        --color-3: #d08;
+        --pinkness-intensity: 0.3;
+      }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--color-1);
+        font-family: "Brush Script MT", cursive;
+        font-size: 20px;
+      }
+      * {
+        scrollbar-color: var(--color-2) var(--color-3);
+      }
+    </style>
+    <style id="variableOverrides"></style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <aside class="toolbar">
+      <h2>Settings</h2>
+      <div class="settings">
+        <div class="setting">
+          <label for="autoscroll">Autoscroll</label>
+          <output for="autoscroll">0</output>
+          <input
+            id="autoscroll"
+            type="range"
+            min="-5"
+            max="5"
+            value="0"
+            onchange="onSpeedChange(this.valueAsNumber)"
+          />
+        </div>
+
+        <div class="setting">
+          <label for="columnCount">Columns</label>
+          <output for="columnCount">Auto</output>
+          <input
+            id="columnCount"
+            type="range"
+            min="0"
+            max="10"
+            value="0"
+            onchange="onColumnCountChange(this.valueAsNumber)"
+          />
+        </div>
+
+        <div class="setting">
+          <label for="pinkIntensity">Pinkness</label>
+          <output for="pinkIntensity">0.3</output>
+          <input
+            id="pinkIntensity"
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            value="0.3"
+            onchange="onPinkIntensityChange(this.valueAsNumber)"
+          />
+        </div>
+      </div>
+      <div class="credit">
+        Made with 💖 by
+        <a
+          target="_blank"
+          href="https://www.reddit.com/user/developer_in_red"
+          rel="noopener noreferrer"
+          >/u/developer_in_red</a
+        >.
+      </div>
+    </aside>
+
+    <div class="grid"></div>
+    <div class="overlay"></div>
+
+    <script type="module" src="script/main.js"></script>
+  </body>
+</html>
