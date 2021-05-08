@@ -14,21 +14,21 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/img/apple-touch-icon.png"
+      href="/assets/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/img/favicon-32x32.png"
+      href="/assets/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/img/favicon-16x16.png"
+      href="/assets/favicon-16x16.png"
     />
-    <link rel="manifest" href="/img/site.webmanifest" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
     <link rel="modulepreload" href="script/main.js" as="script" />
     <link rel="modulepreload" href="script/grid.js" as="script" />
     <link rel="modulepreload" href="script/scroll.js" as="script" />
@@ -41,35 +41,72 @@
         --color-3: #d08;
         --pinkness-intensity: 0.3;
       }
+      @font-face {
+        font-family: "caveatregular";
+        src: url("assets/fonts/caveat-regular-webfont.woff2") format("woff2"),
+          url("assets/fonts/caveat-regular-webfont.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        -webkit-scrollbar-color: var(--color-2) var(--color-3);
+        scrollbar-color: var(--color-2) var(--color-3);
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: "caveatregular", cursive;
+      }
+      body::-webkit-scrollbar-track {
+        background: var(--color-3);
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: var(--color-2);
+        border-radius: 6px;
+        border: 3px solid var(--color-3);
+      }
+      body::-webkit-scrollbar {
+        width: 11px;
+      }
       body {
         margin: 0;
         overflow-x: hidden;
         background: var(--color-1);
-        font-family: "Brush Script MT", cursive;
-        font-size: 20px;
+        font-size: 22px;
+      }
+      h1 {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      h1 {
+        text-align: center;
       }
       .toolbar {
         padding: 8px;
         background: var(--color-3);
         width: 100vw;
         position: sticky;
-        top: -110px;
+        top: -125px;
         transition: top 0.25s;
+      }
+      .settings {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+      .setting input {
+        display: block;
       }
       .credit {
         text-align: center;
         width: 100%;
-      }
-
-      * {
-        scrollbar-color: var(--color-2) var(--color-3);
       }
     </style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <aside class="toolbar">
-      <h2>Settings</h2>
+      <h1>Sissy Scroller</h1>
       <div class="settings">
         <div class="setting">
           <label for="autoscroll">Autoscroll</label>

@@ -140,5 +140,6 @@ function handleResize() {
   }, 300);
 }
 
+window.addChunkToUI = addChunkToUI;
 window.onColumnCountChange = handleColumnCountChange;
 window.onresize = handleResize;

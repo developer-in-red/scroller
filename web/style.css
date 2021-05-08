@@ -1,12 +1,8 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   min-height: 100vh;
 }
 
-@keyframes pink {
+@keyframes pulse {
   from {
     opacity: 0.15;
   }
@@ -31,30 +27,10 @@ body {
   width: 100%;
 }
 
-h2 {
-  margin-top: 0;
-}
-
 .toolbar:hover,
 .toolbar:focus-within {
   top: 0px;
 }
-
-.settings {
-  display: flex;
-}
-
-.setting input {
-  display: block;
-}
-
-/*
-.grid {
-  columns: var(--column-count) var(--column-width);
-  column-gap: 4px;
-  margin: 4px;
-}
-*/
 
 .overlay {
   position: fixed;
@@ -62,13 +38,13 @@ h2 {
   height: 100vh;
   width: 100vw;
   background: var(--color-1);
-  animation: 2s infinite alternate pink;
+  animation: 2s infinite alternate pulse;
   pointer-events: none;
 }
 
 @media (max-width: 800px) {
   .toolbar {
-    top: -210px;
+    top: -255px;
   }
   .settings {
     flex-direction: column;
