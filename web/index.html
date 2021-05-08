@@ -85,7 +85,7 @@
         background: var(--color-3);
         width: 100vw;
         position: sticky;
-        top: -125px;
+        top: -225px;
         transition: top 0.25s;
       }
       .settings {
@@ -96,6 +96,13 @@
       }
       .setting input {
         display: block;
+      }
+      fieldset {
+        padding: 0;
+        border: none;
+      }
+      legend {
+        font-weight: bold;
       }
       .credit {
         text-align: center;
@@ -127,7 +134,7 @@
           <input
             id="columnCount"
             type="range"
-            min="0"
+            min="1"
             max="10"
             onchange="onColumnCountChange(this.valueAsNumber)"
           />
@@ -146,6 +153,46 @@
             onchange="onPinkIntensityChange(this.valueAsNumber)"
           />
         </div>
+      </div>
+      <div class="settings">
+        <fieldset class="settngs">
+          <legend>Sorted?</legend>
+          <div class="settings">
+            <label for="sortingChoice1">
+              <input
+                type="radio"
+                id="sortingChoice1"
+                name="sorting"
+                value="random"
+                checked
+                onchange="onChangeDataset(this.value)"
+              />
+              Random!</label
+            >
+
+            <label for="sortingChoice2">
+              <input
+                type="radio"
+                id="sortingChoice2"
+                name="sorting"
+                value="newest"
+                onchange="onChangeDataset(this.value)"
+              />
+              Newest</label
+            >
+
+            <label for="sortingChoice3">
+              <input
+                type="radio"
+                id="sortingChoice3"
+                name="sorting"
+                value="oldest"
+                onchange="onChangeDataset(this.value)"
+              />
+              Oldest</label
+            >
+          </div>
+        </fieldset>
       </div>
       <div class="credit">
         Made with 💖 by

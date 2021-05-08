@@ -44,7 +44,7 @@ body {
 
 @media (max-width: 800px) {
   .toolbar {
-    top: -255px;
+    top: -450px;
   }
   .settings {
     flex-direction: column;

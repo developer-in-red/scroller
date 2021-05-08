@@ -9,10 +9,20 @@ const columnOutput = document.querySelector(
   '.toolbar output[for="columnCount"]'
 );
 
-let numbers = [...Array(amount + 1).keys()].slice(1);
-shuffle(numbers);
-numbers = buildChunks(numbers);
-const initialNumbers = [...numbers];
+let numbers = buildDataset('random');
+let initialNumbers = [...numbers];
+
+function buildDataset(type) {
+  let numbers = [...Array(amount + 1).keys()].slice(1);
+  if (type === 'random') {
+    shuffle(numbers);
+  }
+  if (type === 'newest') {
+    numbers.reverse();
+  }
+  numbers = buildChunks(numbers);
+  return numbers;
+}
 
 function buildColumn() {
   const column = document.createElement("div");
@@ -116,6 +126,12 @@ function handleColumnCountChange(columnCount) {
   initialize(columnCount);
 }
 
+function handleChangeDataset(type) {
+  numbers = buildDataset(type);
+  initialNumbers = [...numbers];
+  initialize();
+}
+
 export function initialize(columnCount = getDefaultInitialColumnCount()) {
   // Reset everything in case we're re-rendering
   numbers = [...initialNumbers];
@@ -142,4 +158,5 @@ function handleResize() {
 
 window.addChunkToUI = addChunkToUI;
 window.onColumnCountChange = handleColumnCountChange;
+window.onChangeDataset = handleChangeDataset;
 window.onresize = handleResize;
