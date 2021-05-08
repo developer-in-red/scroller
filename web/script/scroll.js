@@ -27,11 +27,4 @@ export function startScrollListener() {
       addChunkToUI();
     }
   };
-
-  // Users with tall screens should fetch more content immediately
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    addChunkToUI();
-  }
-
-  addChunkToUI();
 }

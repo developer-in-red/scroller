@@ -48,15 +48,26 @@
         font-family: "Brush Script MT", cursive;
         font-size: 20px;
       }
+      .toolbar {
+        padding: 8px;
+        background: var(--color-3);
+        width: 100vw;
+        position: sticky;
+        top: -110px;
+        transition: top 0.25s;
+      }
+      .credit {
+        text-align: center;
+        width: 100%;
+      }
+
       * {
         scrollbar-color: var(--color-2) var(--color-3);
       }
     </style>
-    <style id="variableOverrides"></style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
     <aside class="toolbar">
       <h2>Settings</h2>
       <div class="settings">
@@ -75,13 +86,12 @@
 
         <div class="setting">
           <label for="columnCount">Columns</label>
-          <output for="columnCount">Auto</output>
+          <output for="columnCount"></output>
           <input
             id="columnCount"
             type="range"
             min="0"
             max="10"
-            value="0"
             onchange="onColumnCountChange(this.valueAsNumber)"
           />
         </div>
